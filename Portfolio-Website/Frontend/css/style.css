@@ -1,0 +1,912 @@
+/*
+ ================================
+File: style.css 
+DESCRIPTION: Main stylesheet for portfolio website
+AUTHOR: Asadu Anselem
+======================================
+ */
+
+ /* =============================== */
+ /* UNIVERSAL STYLING START */
+ /* ============================== */
+
+ /* Removes default margin and padding from all elements */
+ * {
+    margin: 0;
+    padding: 0;
+    /* Including padding and border inside total width/height */
+    box-sizing: border-box;
+ }
+
+ /* Smooth Scrolling effect */
+ html {
+    scroll-behavior: smooth;
+ }
+
+ /* Main body styling */
+ body {
+    /* Google font */
+    font-family: 'poppins', sans-serif;
+    /* Dark background */
+    background: #050816;
+    /* Default text color */
+    color: #ffffff;
+    /* Prevent Horizontal Scrolling */
+    overflow-x: hidden;
+ }
+
+ /* Removes underline from all links */
+ a {
+    text-decoration: none;
+ }
+
+ /* Removes List Styling */
+ul {
+    list-style: none;
+}
+
+/* Section Spacing  */
+section {
+    padding: 100px 10%;
+}
+
+/* Section title styling  */
+.section-title {
+    /* Font size */
+    font-size: 40px;
+    /* center alignment */
+    text-align: center;
+    /* Bottom Spacing  */
+    margin-bottom: 60px;
+    /* Text color */
+    color: #00f7ff;
+    /* Letter Spacing  */
+    letter-spacing: 2px;
+}
+
+/* ============================== */
+/* UNIVERSAL STYLING END */
+/* ================================ */
+
+
+
+/* ==================================== */
+/* NAVBAR STYLING START  */
+/* ==================================== */
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 18px 18%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(5, 8, 22, 0.75);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    transition: 0.4s ease;
+    border-bottom: 1px solid rgba(0, 247, 255, .15);
+}
+
+/* LOgo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Logo Icon */
+.logo i{
+    color: #00f7ff;
+    text-shadow: 0 0 10px #00f7ff;
+}
+
+/* Logo Text */
+.logo span {
+    transition: .4s;
+}
+
+/* Logo hover */
+.logo:hover span {
+    color: #00f7ff;
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+/* Nav-links li */
+.nav-links li {
+    list-style: none;
+}
+
+/* Navigation Links */
+.nav-links a {
+    color: white;
+    font-weight: 500;
+    position: relative;
+    transition: .3s;
+}
+
+/* Hover Color */
+.nav-links a:hover {
+    color: #00f7ff;
+}
+
+/* UnderLine Animation */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #00f7ff;
+    transition: .3s;
+}
+
+/* Expand underline */
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Active Underline */
+.nav-links a.active::after {
+    width: 100%;
+}
+
+/* Hamburger button */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Hamburger Lines */
+.menu-toggle span {
+    width: 28px;
+    height: 3px;
+    background: white;
+    border-radius: 20px;
+    transition: .4s;
+}
+
+/* Navbar after Scrolling */
+.navbar.scrolled {
+    background: rgba(0,0,0, .95);
+    box-shadow: 0 10px 25px rgba(0, 247, 255, .12);
+}
+
+/* ============================================= */
+/* RESPONSIVE NAVIGATION */
+/* ============================================== */
+
+@media(max-width:900px) {
+    /* Hamburger Visible */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Mobile Menu */
+    .nav-links {
+        position: fixed;
+        top: 78px;
+        right: -100%;
+        width: 280px;
+        height: calc(100vh - 78px);
+        background: #09111f;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 60px;
+        transition: .4s;
+    }
+
+    /* Open Menu */
+    .nav-links.active {
+        right: 0;
+    }
+}
+
+
+
+ /* ============================== */
+  /* NAVBAR STYLING END */
+   /* ============================ */
+
+
+
+    /* ============================ */
+     /* HERO SECTION START  */
+      /* =============================== */
+      .hero {
+         /* Flexbox layout */
+         display: flex;
+          /* Center items vertically */
+          align-items: center;
+           /* Space between content and image */
+           justify-content: space-between;
+            /* Minimum screen height */
+            min-height: 100vh;
+             /* Top spacing */
+             padding-top: 120px;
+              /* Gap between columns */
+              gap: 50px;
+      }
+
+       /*  Hero content width */
+       .hero-content {
+        flex: 1;
+       }
+
+        /* Small intro text */
+        .hero-content h4 {
+             /* Accent color */
+             color: #00f7ff;
+              /* Bottom spacing */
+              margin-bottom: 10px;
+               /* Font size */
+               font-size: 20px;
+
+        }
+
+        /* Button icons spacing */
+        .btn i,
+        .btn-view i,
+        .btn-secondary i {
+            /* Space between icob and text */
+            margin-right: 8px;
+        }
+        
+
+         /* Main heading */
+         .hero-content h1 {
+             /* Large font size */
+             font-size: 70px;
+              /* Bottom spacing */
+              margin-bottom: 15px;
+               /* Line spacing */
+               line-height: 1.1;
+         }
+
+          /* Carear title */
+          .hero-content h2 {
+             /* font size */
+             font-size: 35px;
+              /* Accent color */
+              color: #00f7ff;
+               /* Bottom spacing */
+               margin-bottom: 20px;
+          }
+
+           /* Hero paragraph  */
+           .hero-content p {
+             /* Font Size */
+             font-size: 18px;
+              /* Line Spacing */
+              line-height: 1.8;
+               /* Text color */
+               color: #d1d1d1;
+                /*  Bottom spacing */
+                margin-bottom: 30px;
+           }
+
+            /* Hero Buttons Container  */
+            .hero-buttons {
+                 /* Flexbox layout */
+                 display: flex;
+                  /* Allow wrapping */
+                  flex-wrap: wrap;
+                   /* Space between buttons */
+                   gap: 15px;
+                    /* Bottom spacing */
+                    margin-bottom: 30px;
+            }
+
+             /* Main Button styling */
+             .btn,
+             .btn-view,
+             .btn-secondary {
+                 /* padding */
+                 padding: 14px 28px;
+                  /* Rounded corners */
+                  border-radius: 50px;
+                   /* Font weight */
+                   font-weight: 600;
+                    /* Cursor pointer  */
+                    cursor: pointer;
+                     /* Transition effect */
+                     transition: 0.4s ease;
+                      /* Inline block */
+                      display: inline-block;
+             }
+
+              /* Primary button  */
+              .btn {
+                 /* Background color  */
+                 background: #00f7ff;
+                  /* Text color */
+                  color: #050816;
+              }
+
+               /* Hover effect  */
+               .btn:hover {
+                 /* Glow effect */
+                 box-shadow: 0 0 20px #00f7ff;
+                  /* Move upward */
+                  transform: translate(-5px);
+               }
+
+               /* View button */
+               .btn-view {
+                /* Transparent background */
+                background: transparent;
+                /* Border */
+                border: 2px solid #00f7ff;
+                /* Text Color */
+                color: #00f7ff;
+               }
+
+               /* View button hover */
+               .btn-view:hover {
+                /* Filled Background */
+                background: #00f7ff;
+                /* Text color */
+                color: #050816;
+                /* Glow */
+                box-shadow: 0 0 20px #00f7ff;
+               }
+
+               /* Secondary Button */
+               .btn-secondary {
+                  /* Purple Background */
+                  background: #7d2cff;
+                    /* Text color */
+                    color: #ffffff;
+               }
+
+          /* Secondary Button hover */
+          .btn-secondary:hover {
+              /* Glow */
+              box-shadow: 0 0 20px #7d2cff;
+                /* Animation Movement */
+                transform: translateY(-5px);
+          }
+
+            /* Social media icons container */
+            .social-icons {
+                  /* Flexbox */
+                  display: flex;
+                    /* Space Between icons */
+                    gap: 20px;
+            }
+
+              /* Social icon links */
+              .social-icons a {
+                  /* Width */
+                  width: 50px;
+                    /* Height */
+                    height: 50px;
+                      /* Circular Shape */
+                      border-radius: 50%;
+                        /* Background */
+                        background: rgba(255, 255, 255, 0.5);
+                          /* Flexbox center */
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          /* Text Color */
+                          color: #00f7ff;
+                          /* Font size */
+                          font-size: 20px;
+                          transition: 0.4s ease;
+              }
+
+                          /* Social icons hover effect  */
+                          .social-icons a:hover {
+                          /* Background color */
+                          background: #00f7ff;
+                          /* Icon color */
+                          color: #050816;
+                          /* Glow */
+                          box-shadow: 0 0 20px #00f7ff;
+                          /* Move Upward */
+                          transform: translateY(-5px);
+                          }
+
+                          /* Hero image container */
+                          .hero-image {
+                            flex: 1;
+                            /* Center image */
+                            text-align: center;
+                          }
+
+                          /* Hero profile image */
+                          .hero-image img {
+                            /* Responsive width */
+                            width: 100%;
+                            /* Maximum width */
+                            max-width: 400px;
+                            /* Rounded Image */
+                            border-radius: 50%;
+                            /* Border */
+                            border: 5px solid #00f7ff;
+                            /* Glow effect */
+                            box-shadow: 0 0 40px rgba(0, 247, 255, 0.5);
+                            /* Floating Animation */
+                            animation: floatImage 4s ease-in-out infinite;
+                          }
+
+                          /* Floating image Animation */
+                          @keyframes floatImage {
+                            /* Start position */
+                            0% {
+                                transform: translateY(0px);
+                            }
+                            /* Middle Position */
+                            50% {
+                                transform: translate(-20px);
+                            }
+                            /* End Position */
+                            100% {
+                                 transform: translate(0);
+                            }
+                          }
+
+                          /* ===============================  */
+                          /* HERO SECTION END */
+                          /* =================================== */
+
+                          /* ================================ */
+                          /* SKILLS SECTION START */
+                          /* ================================= */
+                          .skills-container {
+                            /* Grid layout */
+                            display: grid;
+                            /* Respomsive columns */
+                            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                            /* Gap */
+                            gap: 30px;
+                          }
+
+.skill-card {
+    /* Background */
+    background: rgba(255, 255, 255, 0.05);
+    /* Padding */
+    padding: 40px 30px;
+    /* Rounded corners */
+    border-radius: 20px;
+    /* Text alignment */
+    text-align: center;
+     /* Transition  */
+     transition: 0.4s ease;
+      /* Border */
+      border: 1px solid rgba(0, 247, 255, 0.2);
+}
+
+ /* Skill Card hover */
+ .skill-card:hover {
+     /* Move upward  */
+     transform: translateY(-10px);
+      /* Glow */
+      box-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
+ }
+
+  /* Skill icons */
+  .skill-card i {
+     /* font-size */
+     font-size: 50px;
+      /* Accent color */
+      color: #00f7ff;
+       /* Bottom Spacing */
+       margin-bottom: 20px;
+  }
+
+  
+   /* Skill Titles */
+   .skill-card h3 {
+     /* Bottom spacing */
+     margin-bottom: 15px;
+   }
+
+
+    /* Skill External Links */
+    .skill-link {
+         /* Text color */
+         color: #00f7ff;
+          /* Font weight */
+          font-weight: 600;
+    }
+
+     /* =================================  */
+      /* SKILL SECTION END */
+       /* ================================= */
+
+
+ /* ======================================  */
+  /* TOOL SECTION START  */
+   /* ======================================  */
+
+    /* Tools container */
+    .tools-container {
+         /* Flexbox */
+         display: flex;
+          /* Wrap items */
+          flex-wrap: wrap;
+           /* Center items */
+           justify-content: center;
+            /* Gap */
+            gap: 20px;
+    }
+
+/* Tool items */
+.tool-item {
+    /* Background */
+    background: rgba(255, 255, 255, 0.05);
+    /* Padding */
+    padding: 15px 25px;
+    /* Rounded corners */
+    border-radius: 50px;
+    /* Text color */
+    color: #00f7ff;
+    /* Transition */
+    transition: 0.4s ease;
+    /* Border */
+    border: 1px solid rgba(0, 247, 255, 0.2);
+}
+
+/* Tool Hover  */
+.tool-item:hover {
+    /* Background */
+    background: #00f7ff;
+    /* Text color */
+    color: #050816;
+    /* Glow */
+    box-shadow: 0 0 20px #00f7ff;
+}
+
+/* ============================================ */
+/* TOOLS SECTION END */
+/* ============================================ */
+
+
+
+/* ============================================  */
+/* PROJECT SWECTION START  */
+/* ============================================= */
+
+/* Projects container */
+.projects-container {
+    /* Grid layout */
+    display: grid;
+    /* Responsive columns */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Gap */
+    gap: 30px;    
+}
+
+/* Project card */
+.project-card {
+    /* Background */
+    background: rgba(255, 255, 255, 0.05);
+    /* Rounded Corners */
+    border-radius: 20px;
+    /* Hide overflow */
+    overflow: hidden;
+    /* Transition */
+    transition: 0.4s ease;
+}
+
+/* Project Hover */
+.project-card:hover {
+    /* Move upward */
+    transform: translateY(-10px);
+    /* Glow */
+    box-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
+}
+
+/* Project images */
+.project-card img {
+    /* Full width */
+    width: 100%;
+    /*  Fixed height */
+    height: 220px;
+    /* Maintain Image Ratio */
+    object-fit: cover;
+}
+
+/* Project Content Spacing */
+.project-card h3,
+.project-card p,
+.project-links {
+    padding: 20px;
+}
+
+/* Project title */
+.project-card h3 {
+    /* Text Color */
+    color: #00f7ff;
+}
+
+/* Project Description  */
+.project-card p {
+    /* Text Color */
+    color: #d1d1d1;
+}
+
+/* Project buttons container */
+.project-links {
+     /* Flexbox */
+     display: flex;
+      /* Gap */
+      gap: 15px;
+}
+
+ /* Project buttons */
+ .project-btn {
+     /* Background */
+     background: #00f7ff;
+      /* Text color */
+      color: #050816;
+      padding: 10px 20px;
+       /* Rounded corners */
+       border-radius: 30px;
+        /* font weight */
+        font-weight: 600;
+ }
+
+  /* =============================================== */
+   /*  PROJECT SECTION END */
+    /* ============================================= */
+
+
+/* =================================================== */
+/*  CERTIFICATES SECTION START */
+/* =================================================== */
+
+/* Certificates container */
+.certificate-container {
+    /* Grid Layout  */
+    display: grid;
+    /* Responsive columns */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Gap */
+    gap: 30px;
+}
+
+/* Certificate Card */
+.certificate-card {
+    /* Background */
+    background: rgba(255, 255, 255, 0.05);
+    /* Rounded corners */
+    border-radius: 20px;
+    /* Text Alignment */
+    text-align: center;
+    /* padding */
+    padding-bottom: 30px;
+    /* overflow hidden */
+    overflow: hidden;
+    transition: 0.4s ease;
+}
+
+/* Certificate hover */
+.certificate-card:hover {
+    /* Move upward */
+    transform: translateY(-10px);
+    /* Glow */
+    box-shadow: 0 0 2px rgba(0, 247, 255, 0.3);
+}
+
+/* Certificates image */
+.certificate-card img {
+    /* full width */
+    width: 100%;
+    /* Fixed height */
+    height: 220px;
+    /* Image fit */
+    object-fit: cover;
+    /* Bottom spacing  */
+    margin-bottom: 20px;
+}
+
+/* Certificate title */
+.certificate-card h3 {
+    /* Bottom spacing */
+    margin-bottom: 20px;
+    /* Accent color */
+    color: #00f7ff;
+}
+
+/* Certificate button */
+.certificate-btn {
+    /* Background */
+    background: #00f7ff;
+    /* Text color */
+    color: #050816;
+    /* Padding */
+    padding: 12px 24px;
+    /* Rounded corners */
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+/* ==============================================  */
+/* CERTIFICATE SECTION ENDS */
+/* ================================================= */
+
+
+
+/* ================================================ */
+/* CONTACT SECTION STARTS */
+/* ================================================= */
+
+/* Contact container */
+.contact-container p {
+    /* Font size */
+    font-size: 20px;
+    /* Bottom spacing */
+    margin-bottom: 20px;
+    /* Text Color */
+    color: #d1d1d1;
+}
+
+/* Contact Icons */
+.contact-container i {
+    /* Accent color */
+    color: #00f7ff;
+    /* Right spacing */
+    margin-right: 10px;
+}
+
+/* ============================================ */
+/* CONTACT SECTION ENDS */
+/* ============================================== */
+
+
+/* ================================================== */
+/* FOOTER SECTION STARTS */
+/* ==================================================== */
+
+/* Footer styling */
+footer {
+    /* Center text */
+    text-align: center;
+    padding: 30px;
+    /* Dark Background */
+    background-color: #02040d;
+    /* Top Border */
+    border-top: 1px solid rgba(0, 247, 255, 0.2);
+}
+
+/* Footer Text */
+footer p {
+    /* Text color */
+    color: #d1d1d1;
+}
+
+/* ============================================== */
+/* FOOTER SECTION END */
+/* ================================================ */
+
+
+
+/* ================================================ */
+/* RESPONSIVE DESIGN START */
+/* ================================================== */
+
+/* Tablet Responsiveness */
+@media (max-width: 992px) {
+    /* Hero layout */
+    .hero {
+        /* Stack items vertically */
+        flex-direction: column;
+        /* center alignment */
+        text-align: center;
+    }
+
+    /* Navigation Links */
+    .nav-links {
+        /* Reduce Spacing */
+        gap: 15px;
+    }
+
+    /* Hero Heading */
+    .hero-content h1 {
+        /* Smaller font */
+        font-size: 50px;
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    /* Navbar */
+    .navbar {
+        /* Vertical layout */
+        flex-direction: column;
+        /* Spacing */
+        gap: 20px;
+    }
+
+    /* Navigation links */
+    .nav-links {
+        /* Wrap links */
+        flex-wrap: wrap;
+        /* Center links */
+        justify-content: center;
+    }
+
+    /* Hero title */
+    .hero-content h1 {
+        /* Smaller font */
+        font-size: 40px;
+    }
+    /* Hero Subtitle */
+    .hero-content h2 {
+        /* Smaller font */
+        font-size: 25px;
+    }
+
+    /* Section title */
+    .section-title {
+        /* Smaller font */
+        font-size: 30px;
+    }
+}
+
+/* ================================================== */
+/* RESPONSIVE DESIGN ENDS */
+/* =================================================== */
+
+
+
+/* ==================================================== */
+/*  JAVASCRIPT ANIMATION CLASSES START */
+/* ===================================================== */
+
+
+/* Active navigation link */
+.nav-links a.active{
+    /* Acive Link Color  */
+    color: #00f7ff;
+    /* Bottom border */
+    border-bottom: 5px;
+    /* padding */
+    padding-bottom: 5px;
+}
+
+/* Sroll to top button */
+.scroll-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    border-radius: none;
+    color: #050816;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    box-shadow: 0 0 20px #00f7ff;
+    transition: 0.4s ease;
+}
+
+/* Scroll button hover */
+.scroll-top-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px #00f7ff;
+}
+
+/*  ========================================================  */
+/* JAVASCRIPT ANIMATION CLASSES  ENDS */
+/* =========================================================== */   
